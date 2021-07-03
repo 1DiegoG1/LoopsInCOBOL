@@ -1,0 +1,28 @@
+//HERC01PE JOB (COBOL),                                              
+//             'COBOL PERFORM',                                      
+//             CLASS=A,                                              
+//             MSGCLASS=H,                                           
+//             REGION=8M,TIME=1440,                                  
+//             NOTIFY=HERC01,                                        
+//             MSGLEVEL=(1,1)                                        
+//****************************************************************** 
+//*                                                                  
+//* THIS STEP WILL COMPILE AND LINKEDIT THE PROGRAM
+                 
+//* SOURCE 
+//*                                                                  
+//****************************************************************** 
+//COMPILE  EXEC COBOL,                                               
+//         PROG='PERFORM',                                           
+//         PDSF='HERC01.PLATZI.SRC',                                 
+//         PDSL='HERC01.PLATZI.LOAD'                                 
+//****************************************************************** 
+//*                                                                  
+//* THIS STEP IS GOING TO EXECUTE THE CHARGING MODULE                       
+//*                                                                  
+//****************************************************************** 
+//PROG0101 EXEC PGM=PERFORM                                          
+//STEPLIB  DD DSN=HERC01.PLATZI.LOAD,DISP=SHR                        
+//SYSOUT   DD SYSOUT=*                                               
+/*                                                                   
+//                                                                   
